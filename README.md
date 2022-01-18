@@ -1,3 +1,5 @@
+[![Deploy to Heroku](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/main.yml/badge.svg)](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/main.yml)
+
 # Build & Sell an API with JavaScript
 
 Learn how to Build and Deploy your own fully custom #JavaScript #API with Node and Express from scratch.
