@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import api from './api.js';
+import * as api from './api.js';
 
 // initialize router
 const router = Router();
@@ -14,7 +14,7 @@ router.get('/products/:productId', async (req, res) => {
     const { productId } = req.params;
 
     try {
-        res.json(await api(`dp/${productId}`));
+        res.json(await api.getProductDetails(productId));
     } catch (error) {
         res.json(error);
     }
@@ -25,18 +25,18 @@ router.get('/products/:productId/reviews', async (req, res) => {
     const { productId } = req.params;
 
     try {
-        res.json(await api(`product-reviews/${productId}`));
+        res.json(await api.getProductReviews(productId));
     } catch (error) {
         res.json(error);
     }
 });
 
-// GET Product Reviews
+// GET Product Offers
 router.get('/products/:productId/offers', async (req, res) => {
     const { productId } = req.params;
 
     try {
-        res.json(await api(`gp/offer-listing/${productId}`));
+        res.json(await api.getProductOffers(productId));
     } catch (error) {
         res.json(error);
     }
@@ -47,7 +47,7 @@ router.get('/search/:query', async (req, res) => {
     const { query } = req.params;
 
     try {
-        res.json(await api(`s?k=/${query}`));
+        res.json(await api.searchProducts(query));
     } catch (error) {
         res.json(error);
     }

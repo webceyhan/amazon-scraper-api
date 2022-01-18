@@ -17,7 +17,7 @@ const TARGET_BASE_URL = 'https://www.amazon.com';
  * @param {string} apiKey
  * @returns {string}
  */
-export default async (targetPath, apiKey) => {
+export const fetchApi = async (targetPath, apiKey) => {
     var url = new URL(BASE_URL);
 
     url.search = new URLSearchParams({
@@ -30,3 +30,16 @@ export default async (targetPath, apiKey) => {
 
     return await response.json();
 };
+
+// Resources ///////////////////////////////////////////////////////////////////////////////////////
+
+export const searchProducts = async (query) => fetchApi(`s?k=${query}`);
+
+export const getProductDetails = async (productId) =>
+    fetchApi(`dp/${productId}`);
+
+export const getProductReviews = async (productId) =>
+    fetchApi(`product-reviews/${productId}`);
+
+export const getProductOffers = async (productId) =>
+    fetchApi(`gp/offer-listing/${productId}`);
