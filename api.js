@@ -33,13 +33,14 @@ export const fetchApi = async (targetPath, apiKey) => {
 
 // Resources ///////////////////////////////////////////////////////////////////////////////////////
 
-export const searchProducts = async (query) => fetchApi(`s?k=${query}`);
+export const searchProducts = async (query, apiKey) =>
+    fetchApi(`s?k=${query}`, apiKey);
 
-export const getProductDetails = async (productId) =>
-    fetchApi(`dp/${productId}`);
+export const getProductDetails = async (productId, apiKey) =>
+    fetchApi(`dp/${productId}`, apiKey);
 
-export const getProductReviews = async (productId) =>
-    fetchApi(`product-reviews/${productId}`);
+export const getProductReviews = async (productId, apiKey) =>
+    fetchApi(`product-reviews/${productId}`, apiKey);
 
-export const getProductOffers = async (productId) =>
-    fetchApi(`gp/offer-listing/${productId}`);
+export const getProductOffers = async (productId, apiKey) =>
+    fetchApi(`gp/offer-listing/${productId}`, apiKey);

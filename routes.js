@@ -12,9 +12,10 @@ router.get('/', (req, res) => {
 // GET Product Details
 router.get('/products/:productId', async (req, res) => {
     const { productId } = req.params;
+    const { api_key } = req.query;
 
     try {
-        res.json(await api.getProductDetails(productId));
+        res.json(await api.getProductDetails(productId, api_key));
     } catch (error) {
         res.json(error);
     }
@@ -23,9 +24,10 @@ router.get('/products/:productId', async (req, res) => {
 // GET Product Reviews
 router.get('/products/:productId/reviews', async (req, res) => {
     const { productId } = req.params;
+    const { api_key } = req.query;
 
     try {
-        res.json(await api.getProductReviews(productId));
+        res.json(await api.getProductReviews(productId, api_key));
     } catch (error) {
         res.json(error);
     }
@@ -34,9 +36,10 @@ router.get('/products/:productId/reviews', async (req, res) => {
 // GET Product Offers
 router.get('/products/:productId/offers', async (req, res) => {
     const { productId } = req.params;
+    const { api_key } = req.query;
 
     try {
-        res.json(await api.getProductOffers(productId));
+        res.json(await api.getProductOffers(productId, api_key));
     } catch (error) {
         res.json(error);
     }
@@ -45,9 +48,10 @@ router.get('/products/:productId/offers', async (req, res) => {
 // GET Search Results
 router.get('/search/:query', async (req, res) => {
     const { query } = req.params;
+    const { api_key } = req.query;
 
     try {
-        res.json(await api.searchProducts(query));
+        res.json(await api.searchProducts(query, api_key));
     } catch (error) {
         res.json(error);
     }
