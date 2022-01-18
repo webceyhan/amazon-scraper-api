@@ -1,22 +1,8 @@
 import { Router } from 'express';
-import fetch from 'node-fetch';
+import api from './api.js';
 
 // initialize router
 const router = Router();
-
-/**
- * ScraperAPI Sample Usage
- 
- * http://api.scraperapi.com/?api_key=7f67afa5ed3beed9619dbf4c848b6642&autoparse=true&url=https://www.amazon.com/dp/B08N5KWB9H
- *
- * https://api.scraperapi.com/
- *      ?api_key=7f67afa5ed3beed9619dbf4c848b6642
- *      &autoparse=true
- *      &url=https://www.amazon.com/dp/B08N5KWB9H
- */
-const apiKey = '7f67afa5ed3beed9619dbf4c848b6642';
-const apiBaseUrl = `http://api.scraperapi.com/?api_key=${apiKey}&autoparse=true`;
-const apiTargetUrl = 'https://www.amazon.com';
 
 // define default route
 router.get('/', (req, res) => {
@@ -28,11 +14,7 @@ router.get('/products/:productId', async (req, res) => {
     const { productId } = req.params;
 
     try {
-        const response = await fetch(
-            `${apiBaseUrl}&url=${apiTargetUrl}/dp/${productId}`
-        );
-
-        res.json(await response.json());
+        res.json(await api(`dp/${productId}`));
     } catch (error) {
         res.json(error);
     }
@@ -43,11 +25,7 @@ router.get('/products/:productId/reviews', async (req, res) => {
     const { productId } = req.params;
 
     try {
-        const response = await fetch(
-            `${apiBaseUrl}&url=${apiTargetUrl}/product-reviews/${productId}`
-        );
-
-        res.json(await response.json());
+        res.json(await api(`product-reviews/${productId}`));
     } catch (error) {
         res.json(error);
     }
@@ -58,11 +36,7 @@ router.get('/products/:productId/offers', async (req, res) => {
     const { productId } = req.params;
 
     try {
-        const response = await fetch(
-            `${apiBaseUrl}&url=${apiTargetUrl}/gp/offer-listing/${productId}`
-        );
-
-        res.json(await response.json());
+        res.json(await api(`gp/offer-listing/${productId}`));
     } catch (error) {
         res.json(error);
     }
@@ -73,16 +47,10 @@ router.get('/search/:query', async (req, res) => {
     const { query } = req.params;
 
     try {
-        const response = await fetch(
-            `${apiBaseUrl}&url=${apiTargetUrl}/s?k=/${query}`
-        );
-
-        res.json(await response.json());
+        res.json(await api(`s?k=/${query}`));
     } catch (error) {
         res.json(error);
     }
 });
-
-
 
 export default router;
