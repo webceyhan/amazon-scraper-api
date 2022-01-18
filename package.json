@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Learn how to Build and Deploy your own fully custom #JavaScript #API with Node and Express from scratch.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
