@@ -74,5 +74,20 @@ app.get('/products/:productId/offers', async (req, res) => {
     }
 });
 
+// GET Search Results
+app.get('/search/:query', async (req, res) => {
+    const { query } = req.params;
+
+    try {
+        const response = await fetch(
+            `${apiBaseUrl}&url=${apiTargetUrl}/s?k=/${query}`
+        );
+
+        res.json(await response.json());
+    } catch (error) {
+        res.json(error);
+    }
+});
+
 // start server listening on given PORT
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
