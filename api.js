@@ -1,13 +1,16 @@
+import 'dotenv/config';
 import fetch from 'node-fetch';
 
 /**
  * ScraperAPI Sample Usage
- 
- * http://api.scraperapi.com/?api_key=7f67afa5ed3beed9619dbf4c848b6642&autoparse=true&url=https://www.amazon.com/dp/B08N5KWB9H
  *
+ * http://api.scraperapi.com/
+ *  ?api_key={API_KEY}
+ *  &autoparse=true
+ *  &url=https://www.amazon.com/dp/{productId}
  */
 
-const API_KEY = '7f67afa5ed3beed9619dbf4c848b6642';
+const API_KEY = process.env.API_KEY;
 const BASE_URL = `http://api.scraperapi.com`;
 const TARGET_BASE_URL = 'https://www.amazon.com';
 

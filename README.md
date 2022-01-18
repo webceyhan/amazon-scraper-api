@@ -5,6 +5,12 @@ Learn how to Build and Deploy your own fully custom #JavaScript #API with Node a
 Once you've learned that, you'll know how to put it on a platform called RapidAPI, set the pricing tiers, start selling, and finally, build a business around it.
 
 
+## How to install
+- create an account on [ScraperAPI](https://www.scraperapi.com/)
+- put your ScraperAPI API key into .env
+- rename .env.sample file to .env
+- in terminal, type `npm run watch`
+
 ## Resources
 - Scraping (Amazon ecommerce) done by [ScraperAPI](https://www.scraperapi.com/)
 
