@@ -13,7 +13,7 @@ import fetch from 'node-fetch';
  */
 const apiKey = '7f67afa5ed3beed9619dbf4c848b6642';
 const apiBaseUrl = `http://api.scraperapi.com/?api_key=${apiKey}&autoparse=true`;
-const apiTargetUrl = 'https://www.amazon.com/dp';
+const apiTargetUrl = 'https://www.amazon.com';
 
 // define port
 const PORT = process.env.PORT || 5000;
@@ -35,7 +35,22 @@ app.get('/products/:productId', async (req, res) => {
 
     try {
         const response = await fetch(
-            `${apiBaseUrl}&url=${apiTargetUrl}/${productId}`
+            `${apiBaseUrl}&url=${apiTargetUrl}/dp/${productId}`
+        );
+
+        res.json(await response.json());
+    } catch (error) {
+        res.json(error);
+    }
+});
+
+// GET Product Reviews
+app.get('/products/:productId/reviews', async (req, res) => {
+    const { productId } = req.params;
+
+    try {
+        const response = await fetch(
+            `${apiBaseUrl}&url=${apiTargetUrl}/product-reviews/${productId}`
         );
 
         res.json(await response.json());
