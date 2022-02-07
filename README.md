@@ -9,7 +9,7 @@
 
  <!-- HEADER ///////////////////////////////////////////////////////////// -->
 
-# Amazon Ecommerce Scraper API
+# Amazon Ecommerce ScraperAPI
 
 Learn how to Build and Deploy your own fully custom API with Node and Express from scratch.
 In this tutorial, there is no need for a backend database as all the data was fetched from Amazon Ecommerce website via ScraperAPI.
