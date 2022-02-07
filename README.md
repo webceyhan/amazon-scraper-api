@@ -1,5 +1,5 @@
 [![CodeQL](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/codeql-analysis.yml)
-[![Deploy to Heroku](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/main.yml/badge.svg)](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/main.yml)
+[![Deploy to Heroku](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/amazon-scraper-api/actions/workflows/heroku.yml)
 
 # Build & Sell an API with JavaScript
 
