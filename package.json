@@ -4,14 +4,22 @@
   "description": "Learn how to Build and Deploy your own fully custom #JavaScript #API with Node and Express from scratch.",
   "main": "index.js",
   "type": "module",
+  "keywords": [],
+  "author": "Evren Ceyhan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webceyhan/amazon-scraper-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webceyhan/amazon-scraper-api/issues"
+  },
+  "homepage": "https://github.com/webceyhan/amazon-scraper-api#readme",
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
