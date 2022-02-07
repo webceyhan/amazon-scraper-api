@@ -11,8 +11,8 @@
 
 # Amazon Ecommerce Scraper API
 
-Learn how to Build and Deploy your own fully custom #API with Node and Express from scratch.
-
+Learn how to Build and Deploy your own fully custom API with Node and Express from scratch.
+In this tutorial, there is no need for a backend database as all the data was fetched from Amazon Ecommerce website via ScraperAPI.
 Once you've learned that, you'll know how to put it on a platform called RapidAPI, set the pricing tiers, start selling, and finally, build a business around it.
 
 [View Demo](https://webceyhan-amazon-scraper-api.herokuapp.com) |
